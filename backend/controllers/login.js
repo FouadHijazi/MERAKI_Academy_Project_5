@@ -19,9 +19,11 @@ const login = (req, res) => {
             role: result[0].role_id,
           };
           const secret = process.env.SECRET;
-        const token = jwt.sign(payload, secret);
+          const token = jwt.sign(payload, secret);
 
-          res.status(200).json({success:true,message:"welcome", token });
+          res
+            .status(200)
+            .json({ success: true, message: "welcome", token, result });
         } else {
           res.status(403).json({
             success: false,

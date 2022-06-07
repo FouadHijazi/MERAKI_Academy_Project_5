@@ -199,6 +199,7 @@ const Homepage = () => {
 
       <div className="Serch">
         <input
+          className="searchBar"
           type={"text"}
           placeholder="Search by Product Name"
           onChange={(e) => {
@@ -206,6 +207,7 @@ const Homepage = () => {
           }}
         />
         <button
+          className="searchButton"
           onClick={() => {
             navigate("/search");
           }}
@@ -213,100 +215,120 @@ const Homepage = () => {
           search
         </button>
       </div>
+      <div className="ct">
+        <div>
+          {" "}
+          <h2 className="kitchen">Kitchen</h2>
+        </div>
 
-      <h2>Kitchen</h2>
-      <div className="categories" id="l">
-        {show &&
-          categories.map((element, index) => {
-            return (
-              <div key={index}>
-                <div>
-                  <div class="pic-slideshow-continer">
-                    <img class="pic-slideshow" src={element.category_img} />
-                  </div>
-
-                  <button
-                    class="Srech-Btn"
-                    onClick={() => {
-                      productByCategory(element.id);
-                      setHide(true);
-                    }}
-                  >
-                    {element.category_title}
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-      </div>
-      {hide ? (
-        <button
-          className="back-to-all-button"
-          onClick={() => {
-            gatAllproducts();
-            setHide(false);
-          }}
-        >
-          back to all product{" "}
-        </button>
-      ) : (
-        <></>
-      )}
-      {hide ? (
-        <>
-          <h2>Type of products</h2>
-          <div className="typeOfProduct">
-            {" "}
-            {show &&
-              typesOffoodsState.typesOffoods.typeOfFood.map(
-                (element, index) => {
-                  return (
-                    <div key={index}>
-                      <button
-                        onClick={() => {
-                          getProductsByTypeOf(element.id);
-                        }}
-                      >
-                        {element.type}{" "}
-                      </button>
+        <div className="categories" id="l">
+          {show &&
+            categories.map((element, index) => {
+              return (
+                <div key={index}>
+                  <div>
+                    <div className="pic-slideshow-continer">
+                      <img
+                        className="pic-slideshow"
+                        src={element.category_img}
+                      />
                     </div>
-                  );
-                }
-              )}
-          </div>
-        </>
-      ) : (
-        <></>
-      )}
 
-      <h2>Products</h2>
-      <div className="products">
-        {show &&
-          productsState.products.map((element, index) => {
-            return (
-              <div key={index}>
-                <div>
-                  <img src={element.img} />
+                    <button
+                      className="title_ofCategory"
+                      onClick={() => {
+                        productByCategory(element.id);
+                        setHide(true);
+                      }}
+                    >
+                      {element.category_title}
+                    </button>
+                  </div>
                 </div>
-                <div> {element.productName}</div>
-                <div> {element.description}</div>
-                <div>{element.price}</div>
-                {isLoggedIn ? (
-                  <button
-                    onClick={() => {
-                      addToCart(element.id);
-                      dispatch(setAmount());
-                      dispatch(setPrice(element.price));
-                    }}
-                  >
-                    add to basket
-                  </button>
-                ) : (
-                  <></>
-                )}
+              );
+            })}
+        </div>
+      </div>
+      <div className="hoome">
+        <div className="ttypeOffProductt">
+          {hide ? (
+            <>
+              <h3 className="t">Types of products</h3>
+              <div className="typeOfProduct">
+                {" "}
+                {show &&
+                  typesOffoodsState.typesOffoods.typeOfFood.map(
+                    (element, index) => {
+                      return (
+                        <div key={index}>
+                          <button
+                            className="typees"
+                            onClick={() => {
+                              getProductsByTypeOf(element.id);
+                            }}
+                          >
+                            {element.type}{" "}
+                          </button>
+                        </div>
+                      );
+                    }
+                  )}
               </div>
-            );
-          })}
+            </>
+          ) : (
+            <></>
+          )}
+          {hide ? (
+            <button
+              className="back-to-all-button"
+              onClick={() => {
+                gatAllproducts();
+                setHide(false);
+              }}
+            >
+              back to all product{" "}
+            </button>
+          ) : (
+            <></>
+          )}
+        </div>
+        <div className="productts">
+          {show &&
+            productsState.products.map((element, index) => {
+              return (
+                <div className="product" key={index}>
+                  <div className="pr">
+                    <div className="imge">
+                      <img className="imgg" src={element.img} />
+                    </div>
+                    <div className="pppp">
+                      <div className="t">
+                        <div className="pName"> {element.productName}</div>
+                        <div className="desc"> {element.description}</div>
+                        <div className="price">{element.price}JD</div>
+                      </div>
+                      {isLoggedIn ? (
+                        <div>
+                          <button
+                            className="basketButton"
+                            onClick={() => {
+                              addToCart(element.id);
+                              dispatch(setAmount());
+                              dispatch(setPrice(element.price));
+                            }}
+                          >
+                            Add to basket
+                          </button>
+                        </div>
+                      ) : (
+                        <></>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+        </div>
       </div>
       {hide ? (
         <></>

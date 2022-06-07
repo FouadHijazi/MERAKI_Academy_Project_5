@@ -1,19 +1,80 @@
-.products {
-  display: grid;
-  grid-template-columns: 25% 25% 25%;
-  align-items: center;
-  justify-content: center;
+.productts{
+    display: grid;
+  grid-template-columns: 45% 45% ;
+  grid-template-rows:auto; 
+  /* align-items: center;
+  justify-content: center; */
+/* border: 1px solid rgba(128, 128, 128, 0.426); */
+gap: 2rem;
+margin-left: 4rem;
+   
+}
+.basketButton{
+  width: 8rem;
+  margin-top: 2.4rem;
+  margin-left: 1rem;
+  background-color: rgb(227, 183, 125);
+  color: rgba(0, 0, 0, 0.473);
+}
+.product {
+ 
+border: 1px solid wheat;
+  margin-right: 1.5rem;
+  width: 38rem;
+  height: 8rem;
+  gap: .5rem;
+ 
+}
+.pppp{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+display: flex;
+flex-direction: row;
+margin-left: .5rem;
+margin-top: .5rem;
+}
+.t{
+text-align: left;
+
+}
+.pName{
+  font-size: large;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: rgba(210, 105, 30, 0.673);
+}
+.price{
+  margin-top: .5rem;
+  color: rgba(210, 105, 30, 0.647);
+}
+.desc{
+  color: rgba(0, 0, 0, 0.612);
+}
+.pr{
+  display: flex;
+  flex-direction: row;
 }
 .categories {
   display: flex;
-  animation: scrolling 120s linear infinite;
+  animation: scrolling 20s linear infinite;
 
-  gap: 1rem;
+  /* gap: 1rem; */
   position: relative;
   height: 100%;
   margin: 1rem;
 }
-
+.t{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color:chocolate;
+  margin-left: 1em;
+}
+.typees{
+  width: 8rem;
+  background-color: rgb(227, 183, 125);
+  background-color: rgba(240, 248, 255, 0);
+  color:chocolate;
+  border-bottom: .25rem solid bisque;
+  margin-top: 4rem;
+}
 button {
   width: 150px;
   margin: 5px;
@@ -25,16 +86,14 @@ button {
   color: seashell;
   font-size: large;
 }
-.backtoallbutton {
-  width: 250px;
-  margin: 5px;
-  height: 30px;
-  background-color: rgb(95, 95, 253);
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  color: seashell;
-  font-size: large;
+.back-to-all-button{
+  width: 8rem;
+  background-color: rgb(227, 183, 125);
+  background-color: rgba(240, 248, 255, 0);
+  color:chocolate;
+  border-bottom: .25rem solid bisque;
+  margin-top: 4rem;
+  height: 3rem;
 }
 
 .Serch {
@@ -45,18 +104,65 @@ button {
   align-items: center;
   z-index: 2;
   margin: 20px;
-  border: 1px solid #fff;
+  border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 8px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.541);
   color: coral;
   position: absolute;
   top: 50%;
-  left: 40%;
+  left: 45%;
   width: 40rem;
+  padding: 1rem;
+
+}
+.searchBar{
+  border-radius: .5em;
+  width:29em;
+  background-color: rgba(240, 248, 255, 0.347);
+border-color:rgba(255, 255, 255, 0);
+}
+.searchButton{
+  background-color: rgba(255, 127, 80, 0.827);
+  border-color:rgba(255, 255, 255, 0);
+  height: 2em;
+  border-radius: .6em;
+
 }
 
+.ct{
+display: flex;
+flex-direction:column;
+gap: 1rem;
+}
+.kitchen{
+  float: left;
+padding: 1rem;
+margin-left: 1em;
+margin-top: 1.5em;
+}
+.title_ofCategory{
+  background-color: rgba(240, 248, 255, 0);
+  border-color: rgba(240, 248, 255, 0);
+  color:rgb(228, 122, 84);
+  text-decoration: underline;
 
+
+}
+.categories{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.pic-slideshow{
+  width: 7em;
+  height: 7em;
+}
+
+.pic-slideshow-continer{
+  margin-left: 1em;
+}
 .moveUl {
   list-style: none;
   height: 100%;
@@ -66,8 +172,24 @@ button {
   animation: scrolling 25s linear infinite;
 }
 
+.hoome{
+  display:flex ;
+  flex-direction: row;
+  margin-top: 5rem;
+}
+
+.ttypeOffProductt{
+  margin-left: 1em;
+}
+
+.imgg{
+  width: 100px;
+  height: 100px;
+  margin-top: 1rem;
+}
+/* 
 @keyframes scrolling {
-  0% {
+  50% {
       transform: translateX(0);
   }
 
@@ -75,4 +197,4 @@ button {
       transform: translateX(-180vw);
   }
 }
-
+ */

@@ -10,18 +10,18 @@
 
 .loginns {
   display: flex;
- flex-direction: column;
+ flex-direction: column-reverse;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1em;
-  margin-right: 15%;
+  margin-left: 15%;
  }
- .register-Pic{
+ .login-Pic{
   height: 90vh;
 width: 50%;
-  border-right: .025em solid coral;
+  border-left: .025em solid coral;
 }
 
 

@@ -70,6 +70,25 @@ const Basket = () => {
       price: state.basket.price,
     };
   });
+  const orderToHistory = () => {
+    const orderhisory = JSON.stringify(productsState.products);
+    axios
+      .post(
+        "http://localhost:5000/order",
+        { orderhisory },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((result) => {
+        console.log(productsState.products);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const emptyBasket = () => {
     axios
       .delete(`http://localhost:5000/basket/empty`, {
@@ -252,6 +271,15 @@ const Basket = () => {
       total items : {basketState.amount}
       <br />
       total price : {basketState.price}
+      <div>
+        <button
+          onClick={() => {
+            orderToHistory();
+          }}
+        >
+          check out after paying
+        </button>
+      </div>
     </div>
   );
 };

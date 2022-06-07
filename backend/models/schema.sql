@@ -84,3 +84,13 @@ foreign key (user_id) references users(id),
 is_deleted TINYINT DEFAULT 0,
 primary key (id)
 );
+
+
+
+CREATE TABLE ORDERHISTORY (
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT,
+    foreign key (user_id) references users(id),
+    ORDERhisory VARCHAR(255),
+    primary key (id)
+);
